@@ -33,11 +33,13 @@ export const CartPage = ():JSX.Element=> {
   const closeModal = () => setIsModalOpen(false);
 
   const totalToPay=()=>{
-    let totalToPay= 0
-    cart?.map((carProduct)=>carProduct.price).map((x)=> totalToPay = totalToPay + parseInt(x.slice(1)))
+    const totalToPay = cart.reduce((acc, cur) => acc + (parseInt(cur.price.slice(1)) * (cur.quantity )), 0)
     return totalToPay
   }
-  const handleClick =()=>{
+
+  
+
+const handleClick =()=>{
     dispatch(cleanCart())
     navigate("/")
   }
@@ -61,7 +63,7 @@ export const CartPage = ():JSX.Element=> {
       </Grid>
         <Box sx={{display: 'flex',justifyContent:"space-between",width:{xl:"35%",xs:"80%"},marginBottom:5}}>
           <Typography sx={{fontSize:25}}>Total: </Typography>
-          <Typography sx={{fontSize:25}}>{`${totalToPay()} €`}</Typography>
+          <Typography sx={{fontSize:25,fontFamily:"bold"}}>{`${totalToPay()} €`}</Typography>
         </Box>
         {cart.length?<Button variant="contained" sx={{marginBottom:2}} onClick={openModal}>Comprar</Button>:null}
         <Dialog open={isModalOpen} onClose={closeModal}>

@@ -31,7 +31,7 @@ export const ProductCard = ({product}:any):JSX.Element => {
 
     const cart  = useCustomSelector((state)=>state);
     
-    const { productName, color, price ,image, productId } = product
+    const { productName, color, price ,image, productId,quantity } = product
 
     const [counter, setCounter] = useState(0)
 
@@ -57,8 +57,10 @@ export const ProductCard = ({product}:any):JSX.Element => {
                 name:productName,
                 price:price,
                 image:image[0],
+                quantity:quantity
                 }))
                 notify()
+                console.log(quantity)
             }
 
 

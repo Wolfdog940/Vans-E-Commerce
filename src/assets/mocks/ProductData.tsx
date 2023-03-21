@@ -32,7 +32,8 @@ export const SHOES:Products[]= [
             "https://images.vans.com/is/image/VansEU/VN000QFKBKA-ALT4?wid=800&hei=800&fmt=jpg&qlt=85,1&op_sharpen=0&resMode=sharp2&op_usm=1,1,1,0",
         ],
         stars:<StarBorderOutlinedIcon/>,
-        halfStart:<StarHalfOutlinedIcon/>
+        halfStart:<StarHalfOutlinedIcon/>,
+        quantity:1
     },
     {
         productId:2,
@@ -48,7 +49,8 @@ export const SHOES:Products[]= [
             "https://images.vans.com/is/image/VansEU/VN0A3WMAVNE-ALT6?wid=800&hei=800&fmt=jpg&qlt=85,1&op_sharpen=0&resMode=sharp2&op_usm=1,1,1,0",
         ],
         stars:<StarBorderOutlinedIcon/>,
-        halfStart:<StarHalfOutlinedIcon/>
+        halfStart:<StarHalfOutlinedIcon/>,
+        quantity:1
     },
     {
         productId:3,
@@ -64,7 +66,8 @@ export const SHOES:Products[]= [
             "https://images.vans.com/is/image/VansEU/VN0A4UWMDOL-ALT3?wid=800&hei=800&fmt=jpg&qlt=85,1&op_sharpen=0&resMode=sharp2&op_usm=1,1,1,0",
         ],
         stars:<StarBorderOutlinedIcon/>,
-        halfStart:<StarHalfOutlinedIcon/>
+        halfStart:<StarHalfOutlinedIcon/>,
+        quantity:1
     },
     {
         productId:4,
@@ -80,7 +83,8 @@ export const SHOES:Products[]= [
             "https://images.vans.com/is/image/VansEU/VN000D5INVY-ALT7?wid=800&hei=800&fmt=jpg&qlt=85,1&op_sharpen=0&resMode=sharp2&op_usm=1,1,1,0"
         ],
         stars:<StarBorderOutlinedIcon/>,
-        halfStart:<StarHalfOutlinedIcon/>
+        halfStart:<StarHalfOutlinedIcon/>,
+        quantity:1
     },
     {
         productId:5,
@@ -96,7 +100,8 @@ export const SHOES:Products[]= [
             "https://images.vans.com/is/image/VansEU/VN000EYENVY-ALT7?wid=800&hei=800&fmt=jpg&qlt=85,1&op_sharpen=0&resMode=sharp2&op_usm=1,1,1,0",
         ],
         stars:<StarBorderOutlinedIcon/>,
-        halfStart:<StarHalfOutlinedIcon/>
+        halfStart:<StarHalfOutlinedIcon/>,
+        quantity:1
     },
     {
         productId:6,
@@ -112,7 +117,8 @@ export const SHOES:Products[]= [
             "https://images.vans.com/is/image/VansEU/VN000EYEBPJ-ALT7?wid=800&hei=800&fmt=jpg&qlt=85,1&op_sharpen=0&resMode=sharp2&op_usm=1,1,1,0"
         ],
         stars:<StarBorderOutlinedIcon/>,
-        halfStart:<StarHalfOutlinedIcon/>
+        halfStart:<StarHalfOutlinedIcon/>,
+        quantity:1
     },
     {
         productId:7,
@@ -128,7 +134,8 @@ export const SHOES:Products[]= [
             "https://images.vans.com/is/image/VansEU/VN0A38G15U7-ALT6?wid=800&hei=800&fmt=jpg&qlt=85,1&op_sharpen=0&resMode=sharp2&op_usm=1,1,1,0",
         ],
         stars:<StarBorderOutlinedIcon/>,
-        halfStart:<StarHalfOutlinedIcon/>
+        halfStart:<StarHalfOutlinedIcon/>,
+        quantity:1
     },
     {
         productId:8,
@@ -144,7 +151,8 @@ export const SHOES:Products[]= [
             "https://images.vans.com/is/image/VansEU/VN000EE3W00-ALT6?wid=800&hei=800&fmt=jpg&qlt=85,1&op_sharpen=0&resMode=sharp2&op_usm=1,1,1,0",
         ],
         stars:<StarBorderOutlinedIcon/>,
-        halfStart:<StarHalfOutlinedIcon/>
+        halfStart:<StarHalfOutlinedIcon/>,
+        quantity:1
     },
     {
         productId:9,
@@ -160,7 +168,8 @@ export const SHOES:Products[]= [
             "https://images.vans.com/is/image/VansEU/VN0A38G1R1Q-ALT5?wid=800&hei=800&fmt=jpg&qlt=85,1&op_sharpen=0&resMode=sharp2&op_usm=1,1,1,0"
         ],
         stars:<StarBorderOutlinedIcon/>,
-        halfStart:<StarHalfOutlinedIcon/>
+        halfStart:<StarHalfOutlinedIcon/>,
+        quantity:1
     },
     {
         productId:10,
@@ -176,7 +185,8 @@ export const SHOES:Products[]= [
             "https://images.vans.com/is/image/VansEU/VN000TSVBXH-ALT7?wid=800&hei=800&fmt=jpg&qlt=85,1&op_sharpen=0&resMode=sharp2&op_usm=1,1,1,0"
         ],
         stars:<StarBorderOutlinedIcon/>,
-        halfStart:<StarHalfOutlinedIcon/>
+        halfStart:<StarHalfOutlinedIcon/>,
+        quantity:1
     },
     {
         productId:11,
@@ -192,7 +202,8 @@ export const SHOES:Products[]= [
             "https://images.vans.com/is/image/VansEU/VN0A5HF8BLK-ALT9?wid=800&hei=800&fmt=jpg&qlt=85,1&op_sharpen=0&resMode=sharp2&op_usm=1,1,1,0",
         ],
         stars:<StarBorderOutlinedIcon/>,
-        halfStart:<StarHalfOutlinedIcon/>
+        halfStart:<StarHalfOutlinedIcon/>,
+        quantity:1
     },
     {
         productId:12,
@@ -208,6 +219,7 @@ export const SHOES:Products[]= [
             "https://images.vans.com/is/image/VansEU/VN0A38G1PHN-ALT6?wid=800&hei=800&fmt=jpg&qlt=85,1&op_sharpen=0&resMode=sharp2&op_usm=1,1,1,0"
         ],
         stars:<StarBorderOutlinedIcon/>,
-        halfStart:<StarHalfOutlinedIcon/>
+        halfStart:<StarHalfOutlinedIcon/>,
+        quantity:1
     },
 ]

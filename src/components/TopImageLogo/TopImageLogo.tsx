@@ -12,8 +12,13 @@ interface Image{
 
 export const TopImageLogo = ({logo}:Image):JSX.Element => {
 
-    const cartLength:number  = useCustomSelector((state)=>state.cart.products.length);
+    const cart  = useCustomSelector((state)=>state.cart.products);
 
+    const totalItems=()=>{
+        const totalToPay = cart.reduce((acc, cur) => acc + cur.quantity, 0)
+        return totalToPay
+      }
+    
 
     return (
         
@@ -24,7 +29,7 @@ export const TopImageLogo = ({logo}:Image):JSX.Element => {
                 <CardMedia component="img" image={logo} sx={{maxWidth:{xl:"10%",lg:"10%",sm:"10%",xs:"25%"},paddingY:{xl:2,lg:2,sm:1,xs:1},paddingX:{xl:8,xs:2,lg:6,sm:4}}}/>
             </Link>
             <IconButton sx={{width:70, height:70, marginRight:{xl:5,xs:1}}} >
-                <Badge badgeContent={cartLength} color="error">
+                <Badge badgeContent={totalItems()} color="error">
                     <Link to="/cart">
                         <ShoppingCartIcon sx={{fontSize:40}}/>
                     </Link>

@@ -27,6 +27,7 @@ export const InfoCardContainer = ({productObject, setFrontImage, frontImage}:any
                 name:productObject.productName,
                 price:productObject.price,
                 image:productObject.image[0],
+                quantity:productObject.quantity
                 }))
                 notify()
             }
