@@ -22,7 +22,7 @@ export const TopImageLogo = ({logo}:Image):JSX.Element => {
             <Link to="/">
                 <CardMedia component="img" image={logo} sx={{maxWidth:{xl:"10%",lg:"10%",sm:"10%",xs:"25%"},paddingY:{xl:2,lg:2,sm:1,xs:1},paddingX:{xl:8,xs:2,lg:6,sm:4}}}/>
             </Link>
-            <IconButton sx={{width:70, height:70, marginRight:5}} >
+            <IconButton sx={{width:70, height:70, marginRight:{xl:5,xs:2}}} >
                 <Badge badgeContent={cartLength} color="error">
                     <Link to="/cart">
                         <ShoppingCartIcon sx={{fontSize:40}}/>
