@@ -33,9 +33,9 @@ export const CardContainer = ():JSX.Element => {
 
     
     return (
-        <Box  >
+        <Box >
         {" "}
-            <Grid container sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+            <Grid container sx={{display: 'flex', alignItems: 'center', justifyContent: 'center',paddingTop:"10%"}}>
                 {SHOES?.map((product: Products ,index:any ) => (
                     
                 <ProductCard index={index} key={product.productId} product={product} />
