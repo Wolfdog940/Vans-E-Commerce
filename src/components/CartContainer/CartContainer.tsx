@@ -30,9 +30,9 @@ export const CartContainer = ({cartProduct}:CartProps):JSX.Element => {
       <img  src={image} style={{width:"25%",height:"100%"}}/>
       <Box sx={{display:"flex",flexDirection:"row",alignItems:"center",width:"100%"}}>
         <Typography sx={{fontSize:20,fontWeight:"bold",marginX:2 ,display:"flex",marginLeft:1,color:"grey"}}>{name}</Typography>
-        <IconButton>{`<`}</IconButton>
+        {/* <IconButton>{`<`}</IconButton> */}
         <Typography>{quantity}</Typography>
-        <IconButton>{`>`}</IconButton>
+        {/* <IconButton>{`>`}</IconButton> */}
         <Typography sx={{fontSize:16,fontWeight:"bold",display:"flex",width:"75%",justifyContent:"flex-end"}}>{price}</Typography>
       </Box>
     </Box>
