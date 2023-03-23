@@ -3,19 +3,13 @@ import Typography from "@mui/material/Typography";
 import { useEffect, useState } from "react";
 import { useCustomDispatch, useCustomSelector } from "../../hooks/redux";
 import StoreIcon from '@mui/icons-material/Store';
-import { cleanCart } from "../../store/addToCarSlice/addToCarSlice";
+import { cleanCart, Product } from "../../store/addToCarSlice/addToCarSlice";
 import { Link, useNavigate } from "react-router-dom";
 import CancelIcon from '@mui/icons-material/Cancel';
 import { TopImageLogo } from "../../components/TopImageLogo/TopImageLogo";
 import { ExtraData } from "../../assets/mocks/ExtraData";
 import { GridRowsProp, GridColDef, DataGrid } from "@mui/x-data-grid";
 
-interface Cart {
-  id :number,
-  name:string,
-  price:string,
-  image:string
-}//No puedo utilizar esto 
 
 
 export const CartPage = ():JSX.Element=> {
@@ -33,7 +27,7 @@ export const CartPage = ():JSX.Element=> {
   const closeModal = () => setIsModalOpen(false);
 
 
-const rows:GridRowsProp = cart.map((product)=>
+const rows:GridRowsProp = cart.map((product:Product)=>
   (
     { id: product.id, 
       photoURL: product.image, 
@@ -46,10 +40,10 @@ const rows:GridRowsProp = cart.map((product)=>
   
   const columns: GridColDef[] = [
     
-    { field: "photoURL", headerName: "Producto", width: 150 ,renderCell:params =><Box component="img" src={params.row.photoURL} sx={{width:50}}/>, sortable:false, filterable:false},
-    { field: "name", headerName: "Nombre", width: 150 },
-    { field: "quantity", headerName: "Cantidad", width:75 },
-    { field: "price", headerName: "Precio", width: 80 },
+    { field: "photoURL", headerName: "Producto",flex:1 ,align:"center",headerAlign:"center",renderCell:params =><Box component="img" src={params.row.photoURL} sx={{width:50}}/>, sortable:false, filterable:false},
+    { field: "name", headerName: "Nombre", flex:1,align:"center",headerAlign:"center"},
+    { field: "quantity", headerName: "Cantidad", flex:1,align:"center",headerAlign:"center"},
+    { field: "price", headerName: "Precio",flex:1,align:"center",headerAlign:"center"},
   ];
 
 
@@ -65,16 +59,16 @@ const rows:GridRowsProp = cart.map((product)=>
   
 
   return (
-    <Box sx={{display: 'flex',justifyContent:"center" ,alignItems:"center",flexDirection:"column",marginTop:{xl:10,xs:2}}}>
+    <Box  sx={{display: 'flex',justifyContent:"center" ,alignItems:"center",flexDirection:"column",marginTop:{xl:10,xs:2}}}>
       <TopImageLogo logo={ExtraData.image}/>
       <StoreIcon sx={{color :"rgba(169, 182, 201, 0.6)",fontSize:80,marginTop:"5%"}}/>
-      <Typography sx={{fontSize:40, color :"rgba(169, 182, 201, 0.8)",borderBottom:"4px solid rgba(169, 182, 201, 0.8)",width:{xl:"35%",xs:"80%"},textAlign:"center"}}>Mi Cesta</Typography>
+      <Typography sx={{fontSize:40, color :"rgba(169, 182, 201, 0.8)",borderBottom:"4px solid rgba(169, 182, 201, 0.8)",width:{xl:"50%",xs:"80%"},textAlign:"center"}}>Mi Cesta</Typography>
     {" "}
-        <Grid container style={{ height: 300,display:"flex",justifyContent:"center",marginTop:"2%",width:"50%"}}>
+        <Grid item sx={{ height: 400,display:"flex",justifyContent:"center",marginTop:"2%",width:{xl:"50%",xs:"80%"}}}>
             {
               (cart.length === 0)
                 ? <Typography fontSize={40}>La cesta está vacía</Typography> 
-                :<DataGrid rows={rows} columns={columns} sx={{display:"flex",justifyContent:"center",alignItems:"center",width:"100%",border:0}} hideFooterPagination={true} />
+                :<DataGrid rows={rows} columns={columns} sx={{width:"90%",border:0}} hideFooterPagination={true}/>
             }
         </Grid>
         <Box sx={{display: 'flex',justifyContent:"space-between",width:{xl:"35%",xs:"80%"},marginBottom:5}}>

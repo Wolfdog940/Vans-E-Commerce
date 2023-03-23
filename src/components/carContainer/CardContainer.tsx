@@ -46,8 +46,8 @@ export const CardContainer = ():JSX.Element => {
             <Box width="5%">
                 <ToastContainer
                     position="bottom-right"
-                    autoClose={2500}
-                    hideProgressBar={false}
+                    autoClose={500}
+                    hideProgressBar={true}
                     newestOnTop={false}
                     closeOnClick
                     rtl={false}
