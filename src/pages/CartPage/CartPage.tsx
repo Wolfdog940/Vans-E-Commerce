@@ -3,12 +3,13 @@ import Typography from "@mui/material/Typography";
 import { useEffect, useState } from "react";
 import { useCustomDispatch, useCustomSelector } from "../../hooks/redux";
 import StoreIcon from '@mui/icons-material/Store';
-import { cleanCart, Product } from "../../store/addToCarSlice/addToCarSlice";
-import { Link, useNavigate } from "react-router-dom";
-import CancelIcon from '@mui/icons-material/Cancel';
+import { cleanCart,  deleteProduct,  Product } from "../../store/addToCarSlice/addToCarSlice";
+import {  useNavigate } from "react-router-dom";
 import { TopImageLogo } from "../../components/TopImageLogo/TopImageLogo";
 import { ExtraData } from "../../assets/mocks/ExtraData";
 import { GridRowsProp, GridColDef, DataGrid } from "@mui/x-data-grid";
+import DeleteIcon from '@mui/icons-material/Delete';
+
 
 
 
@@ -33,17 +34,22 @@ const rows:GridRowsProp = cart.map((product:Product)=>
       photoURL: product.image, 
       name: product.name.split(" ").slice(1,2) , 
       quantity: product.quantity, 
-      price: product.price 
+      price: product.price,
+      delete:<DeleteIcon/>
     }
   )
 );
+
+
   
   const columns: GridColDef[] = [
     
-    { field: "photoURL", headerName: "Producto",flex:1 ,align:"center",headerAlign:"center",renderCell:params =><Box component="img" src={params.row.photoURL} sx={{width:50}}/>, sortable:false, filterable:false},
+    { field: "photoURL", headerName: "Producto",flex:1 ,align:"center",headerAlign:"center",renderCell:params => <Box component="img" src={params.row.photoURL} sx={{width:50}}/>, sortable:false, filterable:false},
     { field: "name", headerName: "Nombre", flex:1,align:"center",headerAlign:"center"},
     { field: "quantity", headerName: "Cantidad", flex:1,align:"center",headerAlign:"center"},
     { field: "price", headerName: "Precio",flex:1,align:"center",headerAlign:"center"},
+    { field: "delete", headerName: "Borrar",flex:1,align:"center",headerAlign:"center",renderCell:params => 
+    <IconButton onClick={()=>deleteProductId(params.row.id)} >{params.row.delete}</IconButton>,sortable:false, filterable:false,hideable:false}
   ];
 
 
@@ -56,7 +62,12 @@ const rows:GridRowsProp = cart.map((product:Product)=>
     dispatch(cleanCart())
     navigate("/")
   }
-  
+
+  const deleteProductId =(id:number)=>{
+    dispatch(deleteProduct(id))
+  }
+
+ 
 
   return (
     <Box  sx={{display: 'flex',justifyContent:"center" ,alignItems:"center",flexDirection:"column",marginTop:{xl:10,xs:6}}}>
@@ -91,4 +102,5 @@ const rows:GridRowsProp = cart.map((product:Product)=>
     </Box>
   )
 }
+
 

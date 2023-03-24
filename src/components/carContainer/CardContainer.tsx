@@ -35,7 +35,7 @@ export const CardContainer = ():JSX.Element => {
     return (
         <Box >
         {" "}
-            <Grid container sx={{display: 'flex', alignItems: 'center', justifyContent: 'center',paddingTop:"10%"}}>
+            <Grid container sx={{display: 'flex', alignItems: 'center', justifyContent: 'center',paddingTop:{xl:"10%",xs:"12%"}}}>
                 {SHOES?.map((product: Products ,index:any ) => (
                     
                 <ProductCard index={index} key={product.productId} product={product} />
@@ -46,7 +46,7 @@ export const CardContainer = ():JSX.Element => {
             <Box width="5%">
                 <ToastContainer
                     position="bottom-right"
-                    autoClose={500}
+                    autoClose={1000}
                     hideProgressBar={true}
                     newestOnTop={false}
                     closeOnClick
