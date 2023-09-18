@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { useState } from "react";
+import { useEffect } from "react";
+
 
 export interface Product {
     id:Number, 
@@ -13,9 +14,18 @@ export interface ProductState {
     products: Product[]
 }
 
+const cartData = localStorage.getItem('cart');
+
+
+
 const initialState: ProductState = {
-    products:[],
-}
+
+products: cartData ? JSON.parse(cartData) : []
+
+    }
+
+
+
 
 export const cart = createSlice({
     name: "cart",
@@ -41,11 +51,12 @@ export const cart = createSlice({
                 
             localStorage.setItem("cart",JSON.stringify(state.products.map((item =>item))))
         },
+        
+
         cleanCart:()=>initialState,
+        
         deleteProduct:(state, action) =>{
 
-            console.log("holsdfdsdfgdfa")
-            console.log("hola")
             state.products = state.products.filter(product => product.id !== action.payload);// const index = state.products.findIndex(x=>x.id === action.payload)
             //     state.products.splice(index,1)
         }},

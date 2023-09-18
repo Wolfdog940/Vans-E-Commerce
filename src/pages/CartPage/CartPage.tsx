@@ -52,19 +52,37 @@ const rows:GridRowsProp = cart.map((product:Product)=>
     <IconButton onClick={()=>deleteProductId(params.row.id)} >{params.row.delete}</IconButton>,sortable:false, filterable:false,hideable:false}
   ];
 
-
+  
 
   const totalToPay=()=>{
-    const totalToPay = cart.reduce((acc, cur) => acc + (parseInt(cur.price.slice(1)) * (cur.quantity )), 0)
+    const totalToPay = cart.reduce((acc: number, cur: { price: string; quantity: any; }) => acc + (parseInt(cur.price.slice(1)) * (cur.quantity )), 0)
     return totalToPay
   }
+  
   const handleClick =()=>{
     dispatch(cleanCart())
+    localStorage.clear()
     navigate("/")
+  }
+  
+  const refreshStorage = (id: any) =>{
+
+    const localStorageToObject = JSON.parse(localStorage.cart);
+
+    const localStorageIndex = localStorageToObject.findIndex( (x: { id: any; }) => x.id === id )
+
+    const localStorageId = localStorageToObject [localStorageIndex].id;
+
+    const deleteLocalStorage = localStorageToObject?.filter((x: { id: any; }) => x.id !== localStorageId);
+
+    localStorage.setItem("cart",JSON.stringify(deleteLocalStorage.map(((item: any) =>item))))
+
+    console.log(deleteLocalStorage)
   }
 
   const deleteProductId =(id:number)=>{
     dispatch(deleteProduct(id))
+    refreshStorage(id)
   }
 
  

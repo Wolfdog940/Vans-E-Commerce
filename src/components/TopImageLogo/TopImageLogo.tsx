@@ -4,6 +4,8 @@ import Box from '@mui/material/Box';
 import { AppBar, Badge, IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useCustomSelector } from "../../hooks/redux";
+import { useEffect } from "react";
+import { convertToObject } from "typescript";
 
 interface Image{
     logo:string
@@ -15,9 +17,12 @@ export const TopImageLogo = ({logo}:Image):JSX.Element => {
     const cart  = useCustomSelector((state)=>state.cart.products);
 
     const totalItems=()=>{
-        const totalToPay = cart.reduce((acc, cur) => acc + cur.quantity, 0)
+        const totalToPay = cart.reduce((acc: any, cur: { quantity: any; }) => acc + cur.quantity, 0)
         return totalToPay
       }
+    
+
+
     
 
     return (
