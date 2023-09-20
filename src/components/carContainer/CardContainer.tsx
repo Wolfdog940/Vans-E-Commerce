@@ -1,6 +1,6 @@
 import { Box, Grid } from "@mui/material"
 import { ProductCard } from "../ProductCard/ProductCard"
-import { SHOES } from "../../assets/mocks/ProductData"
+import { SHOES,ACCESORIES,CLOTHES } from "../../assets/mocks/ProductData"
 import { TopImageLogo } from "../TopImageLogo/TopImageLogo"
 import { toast, ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
