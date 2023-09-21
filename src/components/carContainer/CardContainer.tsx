@@ -1,8 +1,7 @@
 import { Box, Grid } from "@mui/material"
 import { ProductCard } from "../ProductCard/ProductCard"
 import { SHOES,ACCESORIES,CLOTHES } from "../../assets/mocks/ProductData"
-import { TopImageLogo } from "../TopImageLogo/TopImageLogo"
-import { toast, ToastContainer } from "react-toastify"
+import {ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -21,22 +20,22 @@ interface Products  {
 
 export const CardContainer = ():JSX.Element => {
 
+    const ramdonProducts =()=>{
+        const ramdonShoes = SHOES.sort(() => 0.5 - Math.random()).slice(0, 4);
+        const ramdonAccesories = ACCESORIES.sort(() => 0.5 - Math.random()).slice(0, 4);
+        const ramdonClothes = CLOTHES.sort(() => 0.5 - Math.random()).slice(0, 4);
 
-//   'product/1'
-
-//   {path: 'product/:id', element: <ProductPage/>}
-
-//   const {pathname} = useLocation()
-
-//     SHOES.find((shoes) => shoes.productId === '1')
-
-
+        return (
+            ([ramdonShoes, ramdonAccesories, ramdonClothes].flat()).sort(()=> Math.random() - 0.5)
+        )
+        
+    }
     
     return (
         <Box >
         {" "}
             <Grid container sx={{display: 'flex', alignItems: 'center', justifyContent: 'center',paddingTop:{xl:"10%",xs:"12%"}}}>
-                {SHOES?.map((product: Products ,index:any ) => (
+                {ramdonProducts()?.map((product: Products ,index:any ) => (
                     
                 <ProductCard index={index} key={product.productId} product={product} />
                 

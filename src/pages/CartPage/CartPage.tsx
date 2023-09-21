@@ -77,7 +77,7 @@ const rows:GridRowsProp = cart.map((product:Product)=>
 
     localStorage.setItem("cart",JSON.stringify(deleteLocalStorage.map(((item: any) =>item))))
 
-    console.log(deleteLocalStorage)
+    
   }
 
   const deleteProductId =(id:number)=>{

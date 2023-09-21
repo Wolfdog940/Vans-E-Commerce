@@ -5,7 +5,7 @@ import { AppBar, Badge, IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useCustomSelector } from "../../hooks/redux";
 import { useEffect } from "react";
-import { convertToObject } from "typescript";
+
 
 interface Image{
     logo:string
@@ -21,13 +21,8 @@ export const TopImageLogo = ({logo}:Image):JSX.Element => {
         return totalToPay
       }
     
-
-
-    
-
     return (
-        
-        
+
         <AppBar sx={{background:"rgb(255,255,255,0.9)",boxShadow:"none" }}>
             <Box sx={{display:"flex", justifyContent:"space-between",alignItems:"center"}}>
             <Link to="/">
