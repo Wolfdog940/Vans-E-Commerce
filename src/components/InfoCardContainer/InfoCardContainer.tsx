@@ -33,7 +33,7 @@ export const InfoCardContainer = ({productObject, setFrontImage, frontImage}:any
             }
 
     return (
-    <Box sx={{ display: "flex", flexDirection: { xl: "row", xs: "column" }, justifyContent: { xs: "center" }, alignItems: { xs: "center" } }}>
+    <Box sx={{ display: "flex", flexDirection: { xl: "row", xs: "column" }, justifyContent: { xs: "center" }, alignItems: { xs: "center" },marginTop:"10%" }}>
             <Box sx={{ display: "flex", justifyContent: "center", flexDirection: "column", width: { xl: "50%", xs: "100%" }, alignItems: { xs: "center" } }}>
                 <CardMedia component="img" src={productObject.image[frontImage]} sx={{ border: "4px solid rgba(169, 182, 201, 0.2)", marginLeft: { xl: 1 }, borderRadius: 5, width: { xs: "90%" } }} />
                 <Box sx={{ display: "flex", flexDirection: "row", justifyContent: "center", marginTop: 1, marginBottom: 5 }}>

@@ -3,6 +3,7 @@ import { ProductCard } from "../ProductCard/ProductCard"
 import { SHOES,ACCESORIES,CLOTHES } from "../../assets/mocks/ProductData"
 import {ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
+import { useEffect, useState } from "react";
 
 
 interface Products  {
@@ -20,22 +21,31 @@ interface Products  {
 
 export const CardContainer = ():JSX.Element => {
 
-    const ramdonProducts =()=>{
-        const ramdonShoes = SHOES.sort(() => 0.5 - Math.random()).slice(0, 4);
-        const ramdonAccesories = ACCESORIES.sort(() => 0.5 - Math.random()).slice(0, 4);
-        const ramdonClothes = CLOTHES.sort(() => 0.5 - Math.random()).slice(0, 4);
+    const [ defaultProduct, setDefaultProduct] = useState<Array<Products>>()
+
+    useEffect(() => {
+        setDefaultProduct(randomProducts())
+    }, [])
+
+  
+    const randomProducts =()=>{
+        const randomShoes = SHOES.sort(() => 0.5 - Math.random()).slice(0, 4);
+        const randomAccesories = ACCESORIES.sort(() => 0.5 - Math.random()).slice(0, 4);
+        const randomClothes = CLOTHES.sort(() => 0.5 - Math.random()).slice(0, 4);
 
         return (
-            ([ramdonShoes, ramdonAccesories, ramdonClothes].flat()).sort(()=> Math.random() - 0.5)
+            ([randomShoes, randomAccesories, randomClothes].flat()).sort(()=> Math.random() - 0.5)
         )
         
     }
+
+    
     
     return (
         <Box >
         {" "}
             <Grid container sx={{display: 'flex', alignItems: 'center', justifyContent: 'center',paddingTop:{xl:"10%",xs:"12%"}}}>
-                {ramdonProducts()?.map((product: Products ,index:any ) => (
+                {defaultProduct?.map((product: Products ,index:Number ) => (
                     
                 <ProductCard index={index} key={product.productId} product={product} />
                 
