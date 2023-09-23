@@ -44,11 +44,11 @@ const rows:GridRowsProp = cart.map((product:Product)=>
   
   const columns: GridColDef[] = [
     
-    { field: "photoURL", headerName: "Producto",flex:1 ,align:"center",headerAlign:"center",renderCell:params => <Box component="img" src={params.row.photoURL} sx={{width:50}}/>, sortable:false, filterable:false},
-    { field: "name", headerName: "Nombre", flex:1,align:"center",headerAlign:"center"},
-    { field: "quantity", headerName: "Cantidad", flex:1,align:"center",headerAlign:"center"},
-    { field: "price", headerName: "Precio",flex:1,align:"center",headerAlign:"center"},
-    { field: "delete", headerName: "Borrar",flex:1,align:"center",headerAlign:"center",renderCell:params => 
+    { field: "photoURL", headerName: "Producto",renderCell:params => <Box component="img" src={params.row.photoURL} sx={{width:50}}/>, sortable:false, filterable:false},
+    { field: "name", headerName: "Nombre",sortable:false, filterable:false,hideable:false},
+    { field: "quantity", headerName: "Cantidad",sortable:false, filterable:false,hideable:false},
+    { field: "price", headerName: "Precio",sortable:false, filterable:true,hideable:false},
+    { field: "delete", headerName: "Borrar",renderCell:params => 
     <IconButton onClick={()=>deleteProductId(params.row.id)} >{params.row.delete}</IconButton>,sortable:false, filterable:false,hideable:false}
   ];
 
@@ -62,7 +62,7 @@ const rows:GridRowsProp = cart.map((product:Product)=>
   const handleClick =()=>{
     dispatch(cleanCart())
     localStorage.clear()
-    navigate("/")
+    closeModal()
   }
   
   const refreshStorage = (id: any) =>{
@@ -93,13 +93,13 @@ const rows:GridRowsProp = cart.map((product:Product)=>
       <StoreIcon sx={{color :"rgba(169, 182, 201, 0.6)",fontSize:80,marginTop:"5%"}}/>
       <Typography sx={{fontSize:40, color :"rgba(169, 182, 201, 0.8)",borderBottom:"4px solid rgba(169, 182, 201, 0.8)",width:{xl:"50%",xs:"80%"},textAlign:"center"}}>Mi Cesta</Typography>
     {" "}
-        <Grid item sx={{ height: 400,display:"flex",justifyContent:"center",marginTop:"2%",width:{xl:"50%",xs:"80%"}}}>
+        <Box sx={{ height: 400,width: '80%'}}>
             {
               (cart.length === 0)
                 ? <Typography fontSize={40}>La cesta está vacía</Typography> 
-                :<DataGrid rows={rows} columns={columns} sx={{width:"90%",border:0}} hideFooterPagination={true}/>
+                :<DataGrid rows={rows} columns={columns} sx={{border:0 ,display:{xl:"flex",lg:"flex",md:"flex",sm:"flex"},alignItems:{xl:"center",lg:"center",md:"center",sm:"center"}}} hideFooterPagination={true}/>
             }
-        </Grid>
+        </Box>
         <Box sx={{display: 'flex',justifyContent:"space-between",width:{xl:"35%",xs:"80%"},marginBottom:5}}>
           <Typography sx={{fontSize:25}}>Total: </Typography>
           <Typography sx={{fontSize:25,fontFamily:"bold"}}>{`${totalToPay()} €`}</Typography>
