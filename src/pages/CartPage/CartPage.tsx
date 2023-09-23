@@ -63,6 +63,7 @@ const rows:GridRowsProp = cart.map((product:Product)=>
     dispatch(cleanCart())
     localStorage.clear()
     closeModal()
+    navigate("/")
   }
   
   const refreshStorage = (id: any) =>{
@@ -93,7 +94,7 @@ const rows:GridRowsProp = cart.map((product:Product)=>
       <StoreIcon sx={{color :"rgba(169, 182, 201, 0.6)",fontSize:80,marginTop:"5%"}}/>
       <Typography sx={{fontSize:40, color :"rgba(169, 182, 201, 0.8)",borderBottom:"4px solid rgba(169, 182, 201, 0.8)",width:{xl:"50%",xs:"80%"},textAlign:"center"}}>Mi Cesta</Typography>
     {" "}
-        <Box sx={{ height: 400,width: '80%'}}>
+        <Box sx={{ height: 400,width: '80%',display:"flex",justifyContent:"center"}}>
             {
               (cart.length === 0)
                 ? <Typography fontSize={40}>La cesta está vacía</Typography> 
