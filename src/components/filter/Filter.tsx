@@ -24,6 +24,7 @@ export const Filter = () =>{
 
   const handleFilter = (e:any) => {
     dispatch(addFilter(e.currentTarget.id))
+    window.scrollTo(0,0)
     handleCloseMenu()
   }
 
