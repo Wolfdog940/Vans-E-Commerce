@@ -26,16 +26,7 @@ export const CardContainer = ():JSX.Element => {
 
     const filter = useCustomSelector((state)=>state.filter)
 
-    const filterObjet = ()=>{
-        if (Object.values(filter)[0] == 'SHOES'){
-            return setDefaultProduct(SHOES)
-        }
-        else if  (Object.values(filter)[0] == "CLOTHES"){
-            return setDefaultProduct(CLOTHES)
-        }
-        else return setDefaultProduct(randomProducts())
-
-    }
+  
 
    useEffect(() => {
      filterObjet()
@@ -56,7 +47,24 @@ export const CardContainer = ():JSX.Element => {
         
     }
 
-    
+    const filterObjet = ()=>{
+        if (Object.values(filter)[0] == 'SHOES'){
+            setDefaultProduct(SHOES)
+        }
+        else if  (Object.values(filter)[0] == "CLOTHES"){
+             setDefaultProduct(CLOTHES)
+        }
+        else if  (Object.values(filter)[0] == "ACCESORIES"){
+             setDefaultProduct(ACCESORIES)
+        }
+        else setDefaultProduct(randomProducts())
+        }
+
+    useEffect(() => {
+        filterObjet()
+        console.log("SDJFASF")
+        console.log(Object.values(filter)[0])
+      }, [filter])
     
     return (
         <Box >
