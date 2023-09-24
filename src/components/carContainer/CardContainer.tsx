@@ -4,6 +4,7 @@ import { SHOES,ACCESORIES,CLOTHES } from "../../assets/mocks/ProductData"
 import {ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect, useState } from "react";
+import { useCustomSelector } from "../../hooks/redux";
 
 
 interface Products  {
@@ -23,9 +24,25 @@ export const CardContainer = ():JSX.Element => {
 
     const [ defaultProduct, setDefaultProduct] = useState<Array<Products>>()
 
-    useEffect(() => {
-        setDefaultProduct(randomProducts())
-    }, [])
+    const filter = useCustomSelector((state)=>state.filter)
+
+    const filterObjet = ()=>{
+        if (Object.values(filter)[0] == 'SHOES'){
+            return setDefaultProduct(SHOES)
+        }
+        else if  (Object.values(filter)[0] == "CLOTHES"){
+            return setDefaultProduct(CLOTHES)
+        }
+        else return setDefaultProduct(randomProducts())
+
+    }
+
+   useEffect(() => {
+     filterObjet()
+     console.log("SDJFASF")
+     console.log(Object.values(filter)[0])
+   }, [filter])
+   
 
   
     const randomProducts =()=>{
