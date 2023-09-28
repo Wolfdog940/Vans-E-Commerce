@@ -1,6 +1,6 @@
-import { Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, IconButton } from "@mui/material";
+import { Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { useCustomDispatch, useCustomSelector } from "../../hooks/redux";
 import StoreIcon from '@mui/icons-material/Store';
 import { cleanCart,  deleteProduct,  Product } from "../../store/addToCarSlice/addToCarSlice";

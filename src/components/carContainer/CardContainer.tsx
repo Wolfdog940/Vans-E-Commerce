@@ -30,9 +30,7 @@ export const CardContainer = ():JSX.Element => {
 
    useEffect(() => {
      filterObjet()
-     console.log("SDJFASF")
-     console.log(Object.values(filter)[0])
-   }, [filter])
+    }, [filter])
    
 
   
@@ -60,11 +58,7 @@ export const CardContainer = ():JSX.Element => {
         else setDefaultProduct(randomProducts())
         }
 
-    useEffect(() => {
-        filterObjet()
-        console.log("SDJFASF")
-        console.log(Object.values(filter)[0])
-      }, [filter])
+   
     
     return (
         <Box >

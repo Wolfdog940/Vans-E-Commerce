@@ -24,11 +24,7 @@ export const TopImageLogo = ({logo}:Image):JSX.Element => {
         return totalToPay
       }
       
-      useEffect(() => {
-        
-        console.log(location.pathname);
-        
-      }, [])
+
       
     
     return (
@@ -40,7 +36,7 @@ export const TopImageLogo = ({logo}:Image):JSX.Element => {
                         <CardMedia component="img" image={logo} sx={{maxWidth:{xl:"10%",lg:"10%",sm:"10%",xs:"25%"},paddingY:{xl:2,lg:2,sm:1,xs:1},paddingX:{xl:8,xs:2,lg:6,sm:4}}}/>
                     </Link>
                 </Box>
-                {(location.pathname !== "/cart")?
+                {(location.pathname == "/")?
                 <Box>
                     <Filter/>
                 </Box>:<></>}

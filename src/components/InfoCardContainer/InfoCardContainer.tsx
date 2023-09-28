@@ -1,5 +1,4 @@
 import { Box, Button, CardMedia, Typography } from '@mui/material'
-import React from 'react'
 import { toast, ToastContainer } from 'react-toastify'
 import { useCustomDispatch } from '../../hooks/redux'
 import { addProduct } from '../../store/addToCarSlice/addToCarSlice'

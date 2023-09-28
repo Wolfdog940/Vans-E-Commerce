@@ -29,12 +29,9 @@ export const Filter = () =>{
     return(
        <>
           <IconButton
-            
             onClick={() => {
-              console.log(showMenu);
               handleOpenMenu()
-              console.log(showMenu);
-            }}
+              }}
           >
             <FilterAltIcon sx={{color:"blue",fontSize:40}}/>
           </IconButton>

@@ -1,7 +1,7 @@
 import { Card, CardContent, CardMedia, Grid, IconButton, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import MobileStepper from '@mui/material/MobileStepper';
@@ -60,7 +60,6 @@ export const ProductCard = ({product}:any):JSX.Element => {
                 quantity:quantity
                 }))
                 notify()
-                console.log(quantity)
             }
 
 
