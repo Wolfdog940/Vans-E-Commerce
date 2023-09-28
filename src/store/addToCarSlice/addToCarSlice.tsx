@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { useEffect } from "react";
+
 
 
 export interface Product {
@@ -15,8 +15,6 @@ export interface ProductState {
 }
 
 const cartData = localStorage.getItem('cart');
-
-
 
 const initialState: ProductState = {
 
