@@ -17,10 +17,8 @@ export interface ProductState {
 const cartData = localStorage.getItem('cart');
 
 const initialState: ProductState = {
-
-products: cartData ? JSON.parse(cartData) : []
-
-    }
+    products: cartData ? JSON.parse(cartData) : []
+}
 
 
 
