@@ -5,11 +5,11 @@ import { useState } from 'react';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import MobileStepper from '@mui/material/MobileStepper';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import  { Product, addProduct }  from "../../store/addToCarSlice/addToCarSlice"
 import { useCustomDispatch, useCustomSelector} from '../../hooks/redux';
 import { toast } from 'react-toastify';
-
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
 
 type ProductProps = {
@@ -26,6 +26,8 @@ type ProductProps = {
     
 }
 export const ProductCard = ({product}:any):JSX.Element => {
+
+    const nav = useNavigate()
 
     const dispatch = useCustomDispatch()
 
@@ -62,6 +64,9 @@ export const ProductCard = ({product}:any):JSX.Element => {
                 AddedToCartToast()
             }
 
+    const handleRedirecctionToInfoPage = () => {
+        nav(`/infoPage/${productId}`)
+    }
 
     const infiniteCarouselForward =():void=>{
         setCounter(counter +1)
@@ -102,9 +107,14 @@ export const ProductCard = ({product}:any):JSX.Element => {
                             <Typography sx={{fontSize:17 ,fontWeight:"bold"}}>
                                 {`Color: ${color}`}
                             </Typography>
-                            <IconButton onClick={handleClick}  sx={{width:60,height:60 }}>
-                            <AddShoppingCartOutlinedIcon  sx={{fontSize:40 }}/>
-                        </IconButton>
+                            <Box>
+                                <IconButton onClick={handleRedirecctionToInfoPage}>
+                                    <InfoOutlinedIcon sx={{width:40,height:40 }}/>
+                                </IconButton>
+                                <IconButton onClick={handleClick}  sx={{width:60,height:60 }}>
+                                <AddShoppingCartOutlinedIcon  sx={{fontSize:40 }}/>
+                            </IconButton>
+                            </Box>
                         </Box>
                 </CardContent>
             </Card>
