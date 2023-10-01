@@ -1,6 +1,4 @@
-import { Box, Button, CardMedia, ImageList, ImageListItem, ImageListItemBar } from "@mui/material";
-import Typography from "@mui/material/Typography/Typography";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { useLocation } from "react-router-dom";
 import { ExtraData } from "../../assets/mocks/ExtraData";
 import { SHOES,ACCESORIES,CLOTHES } from "../../assets/mocks/ProductData";

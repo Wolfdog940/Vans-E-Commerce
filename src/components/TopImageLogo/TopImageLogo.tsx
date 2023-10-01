@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import { AppBar, Badge, IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useCustomSelector } from "../../hooks/redux";
-import { useEffect } from "react";
 import { Filter } from "../filter/Filter";
 import { useLocation } from 'react-router-dom'
 import { RedirectToHomeButton } from "../redirectToHomeBotton/RedirectToHomeButton";
@@ -26,8 +25,6 @@ export const TopImageLogo = ({logo}:Image):JSX.Element => {
       }
       
 
-      
-    
     return (
 
         <AppBar sx={{background:"rgb(255,255,255,0.9)",boxShadow:"none" }}>

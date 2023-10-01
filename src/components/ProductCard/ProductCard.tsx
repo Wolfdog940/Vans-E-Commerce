@@ -6,33 +6,21 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import MobileStepper from '@mui/material/MobileStepper';
 import { Link, useNavigate } from 'react-router-dom';
-import  { Product, addProduct }  from "../../store/addToCarSlice/addToCarSlice"
-import { useCustomDispatch, useCustomSelector} from '../../hooks/redux';
+import  { addProduct }  from "../../store/addToCarSlice/addToCarSlice"
+import { useCustomDispatch } from '../../hooks/redux';
 import { toast } from 'react-toastify';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
 
-type ProductProps = {
-    product:{
-        productId?: number ,
-        productName: string,
-        color?: string,
-        description?: string,
-        Composición?: string,
-        price: string,
-        image:string[],
-        quantity?:number 
-    }
+
     
-}
+
 export const ProductCard = ({product}:any):JSX.Element => {
 
     const nav = useNavigate()
 
     const dispatch = useCustomDispatch()
 
-    const cart  = useCustomSelector((state)=>state);
-    
     const { productName, color, price ,image, productId,quantity } = product
 
     const [counter, setCounter] = useState(0)
@@ -52,7 +40,7 @@ export const ProductCard = ({product}:any):JSX.Element => {
         });
     }   
 
-    const handleClick =()=>{
+    const handleProductsToCart =()=>{
 
         dispatch(addProduct({
                 id:productId,
@@ -65,7 +53,8 @@ export const ProductCard = ({product}:any):JSX.Element => {
             }
 
     const handleRedirecctionToInfoPage = () => {
-        nav(`/infoPage/${productId}`)
+        nav(`/infoPage/${productId}`);
+        window.scrollTo(0,0)
     }
 
     const infiniteCarouselForward =():void=>{
@@ -80,7 +69,7 @@ export const ProductCard = ({product}:any):JSX.Element => {
 
     return (
         <Grid item xl={3}  xs={12} lg={4} sm={6} sx={{display:"flex",justifyContent:"center"}} >
-            <Card  sx={{width:"95%",maxHeight:"100%", margin:2,background:"rgba(169, 182, 201, 0.2)",borderRadius:3}}>
+            <Card  sx={{width:"95%",maxHeight:"100%", margin:2,marginTop:{xs:"20%"},background:"rgba(169, 182, 201, 0.2)",borderRadius:3}}>
                 <Box sx={{display:"flex",justifyContent:"center" }}>
                     <CardMedia   sx={{width:"95%",minHeight:{xl:"100%",lg:"80%",sm:"90%",xs:"90%"}}} >
                         <Link to={`/infoPage/${productId}`}>
@@ -111,7 +100,7 @@ export const ProductCard = ({product}:any):JSX.Element => {
                                 <IconButton onClick={handleRedirecctionToInfoPage}>
                                     <InfoOutlinedIcon sx={{width:40,height:40 }}/>
                                 </IconButton>
-                                <IconButton onClick={handleClick}  sx={{width:60,height:60 }}>
+                                <IconButton onClick={handleProductsToCart}  sx={{width:60,height:60 }}>
                                 <AddShoppingCartOutlinedIcon  sx={{fontSize:40 }}/>
                             </IconButton>
                             </Box>

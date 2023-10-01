@@ -21,7 +21,7 @@ export const InfoCardContainer = ({productObject, setFrontImage, frontImage}:any
     }
     
 
-    const handleClick =()=>{
+    const handleProductsToCart =()=>{
 
         dispatch(addProduct({
                 id:productObject.productId,
@@ -55,7 +55,7 @@ export const InfoCardContainer = ({productObject, setFrontImage, frontImage}:any
                 <Typography sx={{ marginTop: 2 }}>{productObject.description}</Typography>
                 <Typography sx={{ fontSize: 15, fontWeight: "bold", marginTop: "10%" }}>{`Composición: ${productObject.Composición}`}</Typography>
                 <Box sx={{ display: "flex", justifyContent: "center", marginTop: { xl: "5%", xs: "5%" }, marginBottom: { xs: "5%" } }}>
-                    <Button sx={{ background: "gray", "&:hover": { transform: "scale(1.2)", background: "gray" } }} variant="contained" onClick={handleClick}>Anadir al carro</Button>
+                    <Button sx={{ background: "gray", "&:hover": { transform: "scale(1.2)", background: "gray" } }} variant="contained" onClick={handleProductsToCart}>Anadir al carro</Button>
                 </Box>
             </Box>
             <ToastContainer

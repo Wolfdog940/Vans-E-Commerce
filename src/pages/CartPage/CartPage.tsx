@@ -4,7 +4,6 @@ import {  useState } from "react";
 import { useCustomDispatch, useCustomSelector } from "../../hooks/redux";
 import StoreIcon from '@mui/icons-material/Store';
 import { cleanCart,  deleteProduct,  Product } from "../../store/addToCarSlice/addToCarSlice";
-import {  useNavigate } from "react-router-dom";
 import { TopImageLogo } from "../../components/TopImageLogo/TopImageLogo";
 import { ExtraData } from "../../assets/mocks/ExtraData";
 import { GridRowsProp, GridColDef, DataGrid } from "@mui/x-data-grid";
@@ -71,7 +70,7 @@ const rows:GridRowsProp = cart.map((product:Product)=>
     });
 }  
   
-  const handleClick =()=>{
+  const handleShopingAndCart =()=>{
     satisfactoryPurchaseToast()
     dispatch(cleanCart())
     localStorage.clear()
@@ -125,7 +124,7 @@ const rows:GridRowsProp = cart.map((product:Product)=>
         <Button color="error" variant="contained" onClick={closeModal}>
             Cancelar
         </Button>
-        <Button color="success" variant="contained" onClick={handleClick}>
+        <Button color="success" variant="contained" onClick={handleShopingAndCart}>
             Comprar
         </Button>
         </DialogActions>
