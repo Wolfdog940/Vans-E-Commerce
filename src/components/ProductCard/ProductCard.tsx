@@ -6,7 +6,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import MobileStepper from '@mui/material/MobileStepper';
 import { Link } from 'react-router-dom';
-import  { addProduct }  from "../../store/addToCarSlice/addToCarSlice"
+import  { Product, addProduct }  from "../../store/addToCarSlice/addToCarSlice"
 import { useCustomDispatch, useCustomSelector} from '../../hooks/redux';
 import { toast } from 'react-toastify';
 
@@ -37,7 +37,7 @@ export const ProductCard = ({product}:any):JSX.Element => {
 
     
 
-    const notify = () =>{
+    const AddedToCartToast = () =>{
         toast.success('Se ha guardado en la cesta correctamente!', {
         position: "bottom-right",
         autoClose: 500,
@@ -59,7 +59,7 @@ export const ProductCard = ({product}:any):JSX.Element => {
                 image:image[0],
                 quantity:quantity
                 }))
-                notify()
+                AddedToCartToast()
             }
 
 

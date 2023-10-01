@@ -9,6 +9,7 @@ import { TopImageLogo } from "../../components/TopImageLogo/TopImageLogo";
 import { ExtraData } from "../../assets/mocks/ExtraData";
 import { GridRowsProp, GridColDef, DataGrid } from "@mui/x-data-grid";
 import DeleteIcon from '@mui/icons-material/Delete';
+import { toast, ToastContainer } from 'react-toastify'
 
 
 
@@ -19,8 +20,6 @@ export const CartPage = ():JSX.Element=> {
 
   const dispatch = useCustomDispatch()
 
-  const navigate = useNavigate();
-  
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
@@ -58,12 +57,25 @@ const rows:GridRowsProp = cart.map((product:Product)=>
     const totalToPay = cart.reduce((acc: number, cur: { price: string; quantity: any; }) => acc + (parseInt(cur.price.slice(1)) * (cur.quantity )), 0)
     return totalToPay
   }
+
+  const satisfactoryPurchaseToast = () =>{
+    toast.success('La compra se ha realizado correctamente!', {
+    position: "bottom-right",
+    autoClose: 2500,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    });
+}  
   
   const handleClick =()=>{
+    satisfactoryPurchaseToast()
     dispatch(cleanCart())
     localStorage.clear()
     closeModal()
-    navigate("/")
   }
   
   const refreshStorage = (id: any) =>{
@@ -118,6 +130,18 @@ const rows:GridRowsProp = cart.map((product:Product)=>
         </Button>
         </DialogActions>
       </Dialog>
+      <ToastContainer
+                    position="bottom-right"
+                    autoClose={2500}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="light"
+                    />
     </Box>
   )
 }

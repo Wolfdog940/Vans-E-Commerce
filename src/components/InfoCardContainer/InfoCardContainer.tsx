@@ -4,9 +4,10 @@ import { useCustomDispatch } from '../../hooks/redux'
 import { addProduct } from '../../store/addToCarSlice/addToCarSlice'
 
 export const InfoCardContainer = ({productObject, setFrontImage, frontImage}:any):JSX.Element => {
+    
     const dispatch = useCustomDispatch()
 
-    const notify = () =>{
+    const AddedToCartToast = () =>{
         toast.success('Se ha guardado en la cesta correctamente!', {
         position: "bottom-right",
         autoClose: 500,
@@ -17,7 +18,8 @@ export const InfoCardContainer = ({productObject, setFrontImage, frontImage}:any
         progress: undefined,
         theme: "light",
         });
-    }   
+    }
+    
 
     const handleClick =()=>{
 
@@ -28,7 +30,7 @@ export const InfoCardContainer = ({productObject, setFrontImage, frontImage}:any
                 image:productObject.image[0],
                 quantity:productObject.quantity
                 }))
-                notify()
+                AddedToCartToast()
             }
 
     return (

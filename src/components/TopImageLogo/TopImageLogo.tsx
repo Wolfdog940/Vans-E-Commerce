@@ -7,6 +7,7 @@ import { useCustomSelector } from "../../hooks/redux";
 import { useEffect } from "react";
 import { Filter } from "../filter/Filter";
 import { useLocation } from 'react-router-dom'
+import { RedirectToHomeButton } from "../redirectToHomeBotton/RedirectToHomeButton";
 
 interface Image{
     logo:string
@@ -39,14 +40,19 @@ export const TopImageLogo = ({logo}:Image):JSX.Element => {
                 {(location.pathname == "/")?
                 <Box>
                     <Filter/>
-                </Box>:<></>}
+                </Box>:
+                <Box>
+                    <RedirectToHomeButton/>
+                </Box>}
                 
                 <Box>
                     <IconButton sx={{width:70, height:70, marginRight:{xl:5,xs:1}}} >
                         <Badge badgeContent={totalItems()} color="error">
-                            <Link to="/cart">
-                                <ShoppingCartIcon sx={{fontSize:40,color:"blue"}}/>
-                            </Link>
+                            <Box>
+                                <Link to="/cart">
+                                    <ShoppingCartIcon sx={{fontSize:40,color:"blue"}}/>
+                                </Link>
+                            </Box>
                         </Badge>
                 </IconButton>
                 </Box>
