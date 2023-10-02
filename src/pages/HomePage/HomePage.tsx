@@ -1,7 +1,6 @@
 import { Box } from "@mui/material"
 import { ExtraData } from "../../assets/mocks/ExtraData"
-import { CardContainer ,TopImageLogo, Footer } from "../../components/index"
-
+import { CardContainer, Footer, TopImageLogo } from "../../components/index"
 
 
 

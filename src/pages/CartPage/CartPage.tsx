@@ -4,7 +4,7 @@ import {  useState } from "react";
 import { useCustomDispatch, useCustomSelector } from "../../hooks/redux";
 import StoreIcon from '@mui/icons-material/Store';
 import { cleanCart,  deleteProduct,  Product } from "../../store/addToCarSlice/addToCarSlice";
-import { TopImageLogo } from "../../components/TopImageLogo/TopImageLogo";
+import { TopImageLogo } from "../../components/index";
 import { ExtraData } from "../../assets/mocks/ExtraData";
 import { GridRowsProp, GridColDef, DataGrid } from "@mui/x-data-grid";
 import DeleteIcon from '@mui/icons-material/Delete';
