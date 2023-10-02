@@ -69,7 +69,21 @@ const rows:GridRowsProp = cart.map((product:Product)=>
     progress: undefined,
     theme: "light",
     });
-}  
+ }
+
+ const productDisposedCorrectlyToast = () =>{
+  toast.success('El producto ha sido eliminado de la cesta', {
+    position: "bottom-right",
+    autoClose: 2500,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    });
+ }
+
   
   const handleShopingAndCart =()=>{
     satisfactoryPurchaseToast()
@@ -96,6 +110,7 @@ const rows:GridRowsProp = cart.map((product:Product)=>
   const deleteProductId =(id:number)=>{
     dispatch(deleteProduct(id))
     refreshStorage(id)
+    productDisposedCorrectlyToast()
   }
 
  
