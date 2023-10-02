@@ -1,11 +1,11 @@
 import { Box, Grid } from "@mui/material"
-import { ProductCard } from "../index"
+import { ProductCard, cardContainerStyles } from "../index"
 import { SHOES,ACCESORIES,CLOTHES } from "../../assets/mocks/ProductData"
 import {ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect, useState } from "react";
 import { useCustomSelector } from "../../hooks/redux";
-import { styles }  from "./styles"
+
 
 interface Products  {
     productId?: number,
@@ -63,7 +63,7 @@ export const CardContainer = ():JSX.Element => {
     return (
         <Box >
         {" "}
-            <Grid container sx={styles.cardContainerGrid}>
+            <Grid container sx={cardContainerStyles.cardContainerGrid}>
                 {defaultProduct?.map((product: Products ,index:Number ) => (
                     
                 <ProductCard index={index} key={product.productId} product={product} />

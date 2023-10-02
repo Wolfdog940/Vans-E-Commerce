@@ -2,7 +2,7 @@ type Styles = {
     [key: string]: {};
 };
 
-export const styles:Styles = {
+export const filterStyles:Styles = {
     filterIcon :{
         color:"blue",
         fontSize:40

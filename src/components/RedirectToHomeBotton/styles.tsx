@@ -2,7 +2,7 @@ type Styles = {
     [key: string]: {};
 };
 
-export const styles = {
+export const redirectToHomeButton = {
     homeIconStyles:{
         color:"blue",
         fontSize:40

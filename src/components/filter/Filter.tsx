@@ -4,7 +4,7 @@ import { useCustomDispatch} from '../../hooks/redux';
 import { useState } from 'react';
 import { addFilter } from '../../store/filterProductsSlice/filterProductsSlice';
 import { filterData } from '../../assets/mocks/FilterData';
-import { styles } from "./styles"
+import { filterStyles } from "../index"
 
 
 
@@ -33,11 +33,11 @@ export const Filter = () =>{
               handleOpenMenu()
               }}
           >
-            <FilterAltIcon sx={styles.filterIcon}/>
+            <FilterAltIcon sx={filterStyles.filterIcon}/>
           </IconButton>
           <Menu
             id="basic-menu"
-            sx={styles.menuStyles}
+            sx={filterStyles.menuStyles}
             open={showMenu}
             anchorOrigin={{ vertical: "top", horizontal: "right" }}
             onClose={handleCloseMenu}

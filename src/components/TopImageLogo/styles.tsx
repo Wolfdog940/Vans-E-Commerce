@@ -3,7 +3,7 @@ type Styles = {
 };
 
 
-export const styles:Styles = {
+export const topImageLogoStyles:Styles = {
     appBarStyles:{
         background:"rgb(255,255,255,0.9)",
         boxShadow:"none" 

@@ -3,7 +3,7 @@ type Styles = {
 };
 
 
-export const styles:Styles = {
+export const productCardStyles:Styles = {
     commonFlexCenter :{
         display:"flex",
         justifyContent:"center"

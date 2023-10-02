@@ -2,7 +2,7 @@ type Styles = {
     [key: string]: {};
 };
 
-export const styles:Styles = {
+export const footerStyles:Styles = {
     footerContainer:{
         display:"flex",
         flexDirection:"column",

@@ -4,7 +4,7 @@ type Styles = {
 };
 
 
-export const styles:Styles = {
+export const cardContainerStyles:Styles = {
     cardContainerGrid :{
         display: 'flex', 
         alignItems: 'center', 

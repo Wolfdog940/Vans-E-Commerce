@@ -10,7 +10,7 @@ import  { addProduct }  from "../../store/addToCarSlice/addToCarSlice"
 import { useCustomDispatch } from '../../hooks/redux';
 import { toast } from 'react-toastify';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
-import { styles } from './styles';
+import { productCardStyles } from '../index';
 
 
     
@@ -68,40 +68,40 @@ export const ProductCard = ({product}:any):JSX.Element => {
     }
 
     return (
-        <Grid item xl={3}  xs={12} lg={4} sm={6} sx={styles.commonFlexCenter} >
-            <Card  sx={styles.cardStyles}>
-                <Box sx={styles.commonFlexCenter}>
-                    <CardMedia   sx={styles.cardMedia} >
+        <Grid item xl={3}  xs={12} lg={4} sm={6} sx={productCardStyles.commonFlexCenter} >
+            <Card  sx={productCardStyles.cardStyles}>
+                <Box sx={productCardStyles.commonFlexCenter}>
+                    <CardMedia   sx={productCardStyles.cardMedia} >
                         <Link to={`/infoPage/${productId}`}>
-                            <img  src={image[counter]} style={styles.imageStyles}/>
+                            <img  src={image[counter]} style={productCardStyles.imageStyles}/>
                         </Link>
                     </CardMedia>
                 </Box>
                 <CardContent>
-                        <Box sx={styles.carouselBox}>
-                        <MobileStepper position='static' sx={styles.mobilieStepper}  steps={image.length} activeStep={counter} 
+                        <Box sx={productCardStyles.carouselBox}>
+                        <MobileStepper position='static' sx={productCardStyles.mobilieStepper}  steps={image.length} activeStep={counter} 
                             backButton={<IconButton   onClick={infiniteCarouselBackward}><ArrowBackIosIcon/></IconButton>}
                             nextButton={<IconButton  onClick={infiniteCarouselForward}><ArrowForwardIosIcon/></IconButton>}
                         />
-                        <Typography component="h1" sx={styles.productNameStyle}>
+                        <Typography component="h1" sx={productCardStyles.productNameStyle}>
                             {productName}
                         </Typography>
                         </Box>
-                        <Box sx={styles.commonFlexCenter}>
-                            <Typography sx={styles.priceStyle}>
+                        <Box sx={productCardStyles.commonFlexCenter}>
+                            <Typography sx={productCardStyles.priceStyle}>
                                 {price} 
                             </Typography>
                         </Box>
-                        <Box sx={styles.colorStyleContainer}>
-                            <Typography sx={styles.topographyColorStyle}>
+                        <Box sx={productCardStyles.colorStyleContainer}>
+                            <Typography sx={productCardStyles.topographyColorStyle}>
                                 {`Color: ${color}`}
                             </Typography>
                             <Box>
                                 <IconButton onClick={handleRedirecctionToInfoPage}>
-                                    <InfoOutlinedIcon sx={styles.infoOutlinedIcon}/>
+                                    <InfoOutlinedIcon sx={productCardStyles.infoOutlinedIcon}/>
                                 </IconButton>
                                 <IconButton onClick={handleProductsToCart}  sx={{width:60,height:60 }}>
-                                <AddShoppingCartOutlinedIcon  sx={styles.addShoppingCartOutlinedIcon}/>
+                                <AddShoppingCartOutlinedIcon  sx={productCardStyles.addShoppingCartOutlinedIcon}/>
                             </IconButton>
                             </Box>
                         </Box>

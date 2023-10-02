@@ -1,7 +1,7 @@
 import HomeIcon from '@mui/icons-material/Home';
 import { IconButton } from '@mui/material';
 import {  useNavigate } from 'react-router-dom';
-import { styles } from "./styles"
+import { redirectToHomeButton } from "../index"
 
 
 
@@ -21,7 +21,7 @@ export const RedirectToHomeButton = () =>{
 
     return (
         <IconButton onClick={hadleRedirectToHome}>
-            <HomeIcon sx={styles.homeIconStyles}/>
+            <HomeIcon sx={redirectToHomeButton.homeIconStyles}/>
         </IconButton>
     )
 
