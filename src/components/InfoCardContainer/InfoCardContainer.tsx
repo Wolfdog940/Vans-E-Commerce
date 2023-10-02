@@ -2,6 +2,7 @@ import { Box, Button, CardMedia, Typography } from '@mui/material'
 import { toast, ToastContainer } from 'react-toastify'
 import { useCustomDispatch } from '../../hooks/redux'
 import { addProduct } from '../../store/addToCarSlice/addToCarSlice'
+import { styles } from './styles'
 
 export const InfoCardContainer = ({productObject, setFrontImage, frontImage}:any):JSX.Element => {
     
@@ -34,28 +35,28 @@ export const InfoCardContainer = ({productObject, setFrontImage, frontImage}:any
             }
 
     return (
-    <Box sx={{ display: "flex", flexDirection: { xl: "row", xs: "column" }, justifyContent: { xs: "center" }, alignItems: { xs: "center" },marginTop:{xs:"20%"} }}>
-            <Box sx={{ display: "flex", justifyContent: "center", flexDirection: "column", width: { xl: "50%", xs: "100%" }, alignItems: { xs: "center" } }}>
-                <CardMedia component="img" src={productObject.image[frontImage]} sx={{ border: "4px solid rgba(169, 182, 201, 0.2)", marginLeft: { xl: 1 }, borderRadius: 5, width: { xs: "90%" } }} />
-                <Box sx={{ display: "flex", flexDirection: "row", justifyContent: "center", marginTop: 1, marginBottom: 5 }}>
+    <Box sx={styles.infoCardContainer}>
+            <Box sx={styles.cardMediaContainer}>
+                <CardMedia component="img" src={productObject.image[frontImage]} sx={styles.cardMedia}/>
+                <Box sx={styles.frontImageBox}>
 
                     {productObject.image.map((item: any, index: any) => (
-                        <img id={index} key={index} onClick={() => setFrontImage(productObject.image.indexOf(item))} src={item} style={{ border: "4px solid rgba(169, 182, 201, 0.2)", marginLeft: 1, borderRadius: 5, width: "10%", height: "100%" }} />
+                        <img id={index} key={index} onClick={() => setFrontImage(productObject.image.indexOf(item))} src={item} style={styles.frontImage} />
                     ))}
 
                 </Box>
             </Box>
 
-            <Box sx={{ width: { xl: "50%", xs: "90%" }, marginLeft: { xl: 10, xs: 2 }, marginRight: { xs: 1 }, direction: "flex", alignItems: { xs: "center" }, justifyContent: "center" }}>
-                <Typography sx={{ fontSize: { xl: 25, xs: 20 }, textAlign: { xs: "center" }, fontWeight: "bold", marginTop: "5%" }}>{productObject.productName}</Typography>
-                <Typography sx={{ fontSize: 30, fontWeight: "bold", textAlign: { xs: "center" }, marginBottom: 10, marginTop: { xs: 1 } }}>{productObject.price}</Typography>
-                <Typography sx={{ fontSize: 15, fontWeight: "bold", marginLeft: 1, marginTop: "20%" }}>{`Color: ${productObject.color}`}</Typography>
-                <CardMedia component="img" src={productObject.image[0]} sx={{ border: "4px solid rgba(169, 182, 201, 0.2)", borderRadius: 5, cursor: "default", width: "15%", marginTop: 2 }} />
-                <Typography sx={{ fontSize: 15, fontWeight: "bold", marginTop: "20%" }}>DESCRIPCIÓN Y CARACTERÍSTICAS</Typography>
-                <Typography sx={{ marginTop: 2 }}>{productObject.description}</Typography>
-                <Typography sx={{ fontSize: 15, fontWeight: "bold", marginTop: "10%" }}>{`Composición: ${productObject.Composición}`}</Typography>
-                <Box sx={{ display: "flex", justifyContent: "center", marginTop: { xl: "5%", xs: "5%" }, marginBottom: { xs: "5%" } }}>
-                    <Button sx={{ background: "gray", "&:hover": { transform: "scale(1.2)", background: "gray" } }} variant="contained" onClick={handleProductsToCart}>Anadir al carro</Button>
+            <Box sx={styles.rigthSideContainer}>
+                <Typography sx={styles.productNameStyles}>{productObject.productName}</Typography>
+                <Typography sx={styles.productPriceStyles}>{productObject.price}</Typography>
+                <Typography sx={styles.productColorStyles}>{`Color: ${productObject.color}`}</Typography>
+                <CardMedia component="img" src={productObject.image[0]} sx={styles.rightSideCardMedia} />
+                <Typography sx={styles.descriptionTitleStyles}>DESCRIPCIÓN Y CARACTERÍSTICAS</Typography>
+                <Typography sx={styles.descriptionStyle}>{productObject.description}</Typography>
+                <Typography sx={styles.compositionStyles}>{`Composición: ${productObject.Composición}`}</Typography>
+                <Box sx={styles.marginBottom}>
+                    <Button sx={styles.addToCardButton} variant="contained" onClick={handleProductsToCart}>Anadir al carro</Button>
                 </Box>
             </Box>
             <ToastContainer

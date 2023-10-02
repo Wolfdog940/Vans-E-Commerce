@@ -1,10 +1,10 @@
 import { CartPage } from './CartPage/CartPage';
-import  { Home } from './Home/Home';
+import  { HomePage } from './HomePage/HomePage';
 import { InfoPage } from './InfoPage/InfoPage';
 
 
 export const pages = {
-    home: <Home/>,
-    info: <InfoPage/>,
-    cart: <CartPage/>
+    homePage: <HomePage/>,
+    infoPage: <InfoPage/>,
+    cartPage: <CartPage/>
 };

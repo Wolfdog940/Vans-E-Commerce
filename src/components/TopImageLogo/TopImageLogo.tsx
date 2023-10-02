@@ -4,9 +4,10 @@ import Box from '@mui/material/Box';
 import { AppBar, Badge, IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useCustomSelector } from "../../hooks/redux";
-import { Filter } from "../filter/Filter";
+import { Filter } from "../Filter/Filter";
 import { useLocation } from 'react-router-dom'
-import { RedirectToHomeButton } from "../redirectToHomeBotton/RedirectToHomeButton";
+import { RedirectToHomeButton } from "../RedirectToHomeBotton/RedirectToHomeButton";
+import { styles } from "./styles";
 
 interface Image{
     logo:string
@@ -27,11 +28,11 @@ export const TopImageLogo = ({logo}:Image):JSX.Element => {
 
     return (
 
-        <AppBar sx={{background:"rgb(255,255,255,0.9)",boxShadow:"none" }}>
-            <Box sx={{display:"flex", justifyContent:"space-between",alignItems:"center"}}>
+        <AppBar sx={styles.appBarStyles}>
+            <Box sx={styles.topContainer}>
                 <Box>
                     <Link to="/">
-                        <CardMedia component="img" image={logo} sx={{maxWidth:{xl:"10%",lg:"10%",sm:"10%",xs:"25%"},paddingY:{xl:2,lg:2,sm:1,xs:1},paddingX:{xl:8,xs:2,lg:6,sm:4}}}/>
+                        <CardMedia component="img" image={logo} sx={styles.cardMedia}/>
                     </Link>
                 </Box>
                 {(location.pathname == "/")?
@@ -43,11 +44,11 @@ export const TopImageLogo = ({logo}:Image):JSX.Element => {
                 </Box>}
                 
                 <Box>
-                    <IconButton sx={{width:70, height:70, marginRight:{xl:5,xs:1}}} >
+                    <IconButton sx={styles.iconButtonStyle} >
                         <Badge badgeContent={totalItems()} color="error">
                             <Box>
                                 <Link to="/cart">
-                                    <ShoppingCartIcon sx={{fontSize:40,color:"blue"}}/>
+                                    <ShoppingCartIcon sx={styles.shoppingCartIcon}/>
                                 </Link>
                             </Box>
                         </Badge>

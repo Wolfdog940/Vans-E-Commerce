@@ -4,9 +4,9 @@ import { pages } from "../pages";
 
 const routes:RouteObject[] = [
     
-    {path: "/", element: pages.home},
-    {path: "/infoPage/:id", element: pages.info},
-    {path: "/cart", element: pages.cart}
+    {path: "/", element: pages.homePage},
+    {path: "/infoPage/:id", element: pages.infoPage},
+    {path: "/cart", element: pages.cartPage}
 ]
 
 export const router= createBrowserRouter(routes)

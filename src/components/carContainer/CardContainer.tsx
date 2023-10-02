@@ -5,7 +5,7 @@ import {ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect, useState } from "react";
 import { useCustomSelector } from "../../hooks/redux";
-
+import { styles }  from "./styles"
 
 interface Products  {
     productId?: number,
@@ -29,7 +29,7 @@ export const CardContainer = ():JSX.Element => {
   
 
    useEffect(() => {
-     filterObjet()
+     filterObjetc()
     }, [filter])
    
 
@@ -45,7 +45,7 @@ export const CardContainer = ():JSX.Element => {
         
     }
 
-    const filterObjet = ()=>{
+    const filterObjetc = ()=>{
         if (Object.values(filter)[0] == 'SHOES'){
             setDefaultProduct(SHOES)
         }
@@ -63,7 +63,7 @@ export const CardContainer = ():JSX.Element => {
     return (
         <Box >
         {" "}
-            <Grid container sx={{display: 'flex', alignItems: 'center', justifyContent: 'center',paddingTop:{xl:"10%",xs:"12%"}}}>
+            <Grid container sx={styles.cardContainerGrid}>
                 {defaultProduct?.map((product: Products ,index:Number ) => (
                     
                 <ProductCard index={index} key={product.productId} product={product} />

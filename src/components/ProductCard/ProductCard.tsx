@@ -10,7 +10,7 @@ import  { addProduct }  from "../../store/addToCarSlice/addToCarSlice"
 import { useCustomDispatch } from '../../hooks/redux';
 import { toast } from 'react-toastify';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
-
+import { styles } from './styles';
 
 
     
@@ -68,40 +68,40 @@ export const ProductCard = ({product}:any):JSX.Element => {
     }
 
     return (
-        <Grid item xl={3}  xs={12} lg={4} sm={6} sx={{display:"flex",justifyContent:"center"}} >
-            <Card  sx={{width:"95%",maxHeight:"100%", margin:2,background:"rgba(169, 182, 201, 0.2)",borderRadius:3}}>
-                <Box sx={{display:"flex",justifyContent:"center" }}>
-                    <CardMedia   sx={{width:"95%",minHeight:{xl:"100%",lg:"80%",sm:"90%",xs:"90%"}}} >
+        <Grid item xl={3}  xs={12} lg={4} sm={6} sx={styles.commonFlexCenter} >
+            <Card  sx={styles.cardStyles}>
+                <Box sx={styles.commonFlexCenter}>
+                    <CardMedia   sx={styles.cardMedia} >
                         <Link to={`/infoPage/${productId}`}>
-                            <img  src={image[counter]} style={{width:"100%",marginTop:20,minHeight:"100%"}}/>
+                            <img  src={image[counter]} style={styles.imageStyles}/>
                         </Link>
                     </CardMedia>
                 </Box>
                 <CardContent>
-                        <Box sx={{display:"flex",alignItems:"center" ,flexDirection:"column",marginTop:2}}>
-                        <MobileStepper position='static' sx={{backgroundColor:"transparent" }}  steps={image.length} activeStep={counter} 
+                        <Box sx={styles.carouselBox}>
+                        <MobileStepper position='static' sx={styles.mobilieStepper}  steps={image.length} activeStep={counter} 
                             backButton={<IconButton   onClick={infiniteCarouselBackward}><ArrowBackIosIcon/></IconButton>}
                             nextButton={<IconButton  onClick={infiniteCarouselForward}><ArrowForwardIosIcon/></IconButton>}
                         />
-                        <Typography component="h1" sx={{fontSize:12, fontWeight:"bold"}}>
+                        <Typography component="h1" sx={styles.productNameStyle}>
                             {productName}
                         </Typography>
                         </Box>
-                        <Box sx={{display:"flex",justifyContent:"center"}}>
-                            <Typography sx={{marginBottom:"3px",fontSize:20, fontWeight:"bold",marginTop:3,position:"relative"}}>
+                        <Box sx={styles.commonFlexCenter}>
+                            <Typography sx={styles.priceStyle}>
                                 {price} 
                             </Typography>
                         </Box>
-                        <Box sx={{display:"flex",flexDirection:"row", justifyContent:"space-between",alignItems:"center"}}>
-                            <Typography sx={{fontSize:17 ,fontWeight:"bold"}}>
+                        <Box sx={styles.colorStyleContainer}>
+                            <Typography sx={styles.topographyColorStyle}>
                                 {`Color: ${color}`}
                             </Typography>
                             <Box>
                                 <IconButton onClick={handleRedirecctionToInfoPage}>
-                                    <InfoOutlinedIcon sx={{width:40,height:40 }}/>
+                                    <InfoOutlinedIcon sx={styles.infoOutlinedIcon}/>
                                 </IconButton>
                                 <IconButton onClick={handleProductsToCart}  sx={{width:60,height:60 }}>
-                                <AddShoppingCartOutlinedIcon  sx={{fontSize:40 }}/>
+                                <AddShoppingCartOutlinedIcon  sx={styles.addShoppingCartOutlinedIcon}/>
                             </IconButton>
                             </Box>
                         </Box>
