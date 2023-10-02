@@ -1,5 +1,5 @@
 import { Box, Grid } from "@mui/material"
-import { ProductCard } from "../ProductCard/ProductCard"
+import { ProductCard } from "../index"
 import { SHOES,ACCESORIES,CLOTHES } from "../../assets/mocks/ProductData"
 import {ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';

@@ -2,9 +2,8 @@ import {  useState } from "react";
 import { useLocation } from "react-router-dom";
 import { ExtraData } from "../../assets/mocks/ExtraData";
 import { SHOES,ACCESORIES,CLOTHES } from "../../assets/mocks/ProductData";
-import { Footer } from "../../components/Footer/Footer";
-import { InfoCardContainer } from "../../components/InfoCardContainer/InfoCardContainer";
-import { TopImageLogo } from "../../components/TopImageLogo/TopImageLogo";
+import { Footer,InfoCardContainer,TopImageLogo  } from "../../components/index";
+
 
 export const InfoPage = () => {
 
