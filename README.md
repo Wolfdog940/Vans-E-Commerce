@@ -5,5 +5,5 @@
     <li>Redux-Toolkit</li>
     <li>React-Query/Axios</li>
     <li>React-Router-Dom</li>
-    <li>Typescript</li>
+    <li>Typescript.</li>
 </ul>
