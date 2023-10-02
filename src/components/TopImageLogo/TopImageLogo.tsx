@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import { AppBar, Badge, IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useCustomSelector } from "../../hooks/redux";
-import { Filter } from "../Filter/Filter"
+import { Filter } from "../filter/Filter"
 import { useLocation } from 'react-router-dom'
 import { RedirectToHomeButton } from "../RedirectToHomeBotton/RedirectToHomeButton";
 import { styles } from "./styles";
