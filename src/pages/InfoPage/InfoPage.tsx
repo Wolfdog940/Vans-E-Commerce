@@ -27,15 +27,13 @@ export const InfoPage = () => {
             
             if (parseInt(id) <= 12){
                 return  SHOES.find((shoes) => shoes.productId === parseInt(id))
-                    
-            }else if (parseInt(id) > 12 && parseInt(id) <=24 ){
-                return  CLOTHES.find((clothes) => clothes.productId === parseInt(id))
-                    
-            }else {
-                return ACCESORIES.find((accesories) => accesories.productId === parseInt(id))
-                    
             }
-            
+            else if (parseInt(id) > 12 && parseInt(id) <=24 ){
+                return  CLOTHES.find((clothes) => clothes.productId === parseInt(id))
+            }
+            else {
+                return ACCESORIES.find((accesories) => accesories.productId === parseInt(id))
+            }
         }
     }
     

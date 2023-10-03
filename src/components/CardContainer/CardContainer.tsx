@@ -50,6 +50,7 @@ export const CardContainer = ():JSX.Element => {
     }
 
     const filterObjetc = ()=>{
+        
         if (Object.values(filter)[0] == 'SHOES'){
             setDefaultProduct(SHOES)
         }
