@@ -55,7 +55,7 @@ export const InfoCardContainer = ({productObject, setFrontImage, frontImage}:any
                 <Typography sx={infoCardContainerStyles.descriptionTitleStyles}>DESCRIPCIÓN Y CARACTERÍSTICAS</Typography>
                 <Typography sx={infoCardContainerStyles.descriptionStyle}>{productObject.description}</Typography>
                 <Typography sx={infoCardContainerStyles.compositionStyles}>{`Composición: ${productObject.Composición}`}</Typography>
-                <Box sx={infoCardContainerStyles.marginBottom}>
+                <Box sx={infoCardContainerStyles.buttonContainer}>
                     <Button sx={infoCardContainerStyles.addToCardButton} variant="contained" onClick={handleProductsToCart}>Anadir al carro</Button>
                 </Box>
             </Box>
