@@ -1,4 +1,7 @@
-import {  useState } from "react";
+//Por que pathName  de useLocation , pathName es mas corto pero useParams creo que seria mas correcto y solo es un condicional mas
+
+import { useParams } from "react-router-dom";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { ExtraData } from "../../assets/mocks/ExtraData";
 import { SHOES,ACCESORIES,CLOTHES } from "../../assets/mocks/ProductData";
@@ -9,24 +12,31 @@ export const InfoPage = () => {
 
     const { pathname } = useLocation();
 
-    const id:number= parseInt(pathname.split("/").slice(-1)[0])
+    //const id:number= parseInt(pathname.split("/").slice(-1)[0])
 
     const [ frontImage, setFrontImage] = useState<number>(0)
+
+    const { id } = useParams<{id:string}>();
+
+    
 
 
     const productObject = () =>{
         
-        if (id <= 12){
-            return  SHOES.find((shoes) => shoes.productId === id)
+        if(id !== undefined){
             
-        }else if (id > 12 && id <=24 ){
-            return  CLOTHES.find((clothes) => clothes.productId === id)
-            
-        }else {
-            return ACCESORIES.find((accesories) => accesories.productId === id)
+            if (parseInt(id) <= 12){
+                return  SHOES.find((shoes) => shoes.productId === parseInt(id))
+                    
+            }else if (parseInt(id) > 12 && parseInt(id) <=24 ){
+                return  CLOTHES.find((clothes) => clothes.productId === parseInt(id))
+                    
+            }else {
+                return ACCESORIES.find((accesories) => accesories.productId === parseInt(id))
+                    
+            }
             
         }
-    
     }
     
 

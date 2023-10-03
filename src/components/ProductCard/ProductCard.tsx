@@ -1,3 +1,5 @@
+//card con parametros que se mapean por cada producto dentro de cardContainer
+
 import { Card, CardContent, CardMedia, Grid, IconButton, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined';

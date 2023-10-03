@@ -1,3 +1,7 @@
+//Componente para mapeado de cards varia dependiendo de la variable que viene del strore, 
+//por defecto se aplica la funcion randomObjects que devuelve un objeto que es un a mezcla de todos los productos
+//Permite cambiar de foto y añadir al carro
+
 import { Box, Grid } from "@mui/material"
 import { ProductCard, cardContainerStyles } from "../index"
 import { SHOES,ACCESORIES,CLOTHES } from "../../assets/mocks/ProductData"

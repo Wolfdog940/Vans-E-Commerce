@@ -1,3 +1,5 @@
+//Footer sin links 
+
 import { Box, Typography } from "@mui/material"
 import { footerStyles } from "../index";
 import { Instagram, Facebook, Twitter, YouTube } from "@mui/icons-material"

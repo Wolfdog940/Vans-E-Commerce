@@ -1,5 +1,9 @@
-import { Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton } from "@mui/material";
-import Typography from "@mui/material/Typography";
+//DataGrid de MUI que devuelve todos los productos agregados al carro con la posibilidad de borrarlos por id ,!falta el poder añadir mas cantidad de cada producto desde el carro!
+//Todo el carro se almacena en localStore y se elimina de localStore en el momento que borramos un producto o simulamos una compra
+//Pendiente de utilizar alguna pasarela de pagos gratuita o que tengan free trial
+//Pendiente de poder tener backend para almacenar pedidos y que al comprar me rediriga a pagina de pedidos
+
+import { Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, Typography } from "@mui/material";
 import {  useState } from "react";
 import { useCustomDispatch, useCustomSelector } from "../../hooks/redux";
 import StoreIcon from '@mui/icons-material/Store';
@@ -16,7 +20,7 @@ import { styles } from "./styles";
 
 export const CartPage = ():JSX.Element=> {
 
-  const cart  = useCustomSelector((state)=>state.cart.products);
+  const cart  = useCustomSelector((state)=>state?.cart.products);
 
   const dispatch = useCustomDispatch()
 

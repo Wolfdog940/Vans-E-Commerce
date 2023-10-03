@@ -1,3 +1,5 @@
+//Nav con iconos de filtro y redireccion a HomePage
+
 import CardMedia from "@mui/material/CardMedia/CardMedia"
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Box from '@mui/material/Box';

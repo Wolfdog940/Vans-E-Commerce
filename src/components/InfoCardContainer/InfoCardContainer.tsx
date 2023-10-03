@@ -1,3 +1,6 @@
+//Contenedor de la cards de informacion detallada del producto 
+//Permite cambiar de foto y añadir al carro
+
 import { Box, Button, CardMedia, Typography } from '@mui/material'
 import { toast, ToastContainer } from 'react-toastify'
 import { useCustomDispatch } from '../../hooks/redux'

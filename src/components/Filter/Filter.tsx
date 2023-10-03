@@ -1,3 +1,5 @@
+//Componente que almacena la variable de filtro en el store
+
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import { IconButton, Menu, MenuItem } from '@mui/material';
 import { useCustomDispatch} from '../../hooks/redux';
