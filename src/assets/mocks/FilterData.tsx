@@ -2,8 +2,6 @@ export type filterType ={
     itemId: string,
     menuText:string
 }
-
-
 export const filterData:filterType[] =[
     {
         itemId :"SHOES",
