@@ -3,6 +3,7 @@ import { router } from './router/router';
 import store from "./store/store";
 import { RouterProvider } from 'react-router-dom';
 import { Provider } from "react-redux";
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 
 export const App = ():JSX.Element => {
@@ -12,4 +13,4 @@ export const App = ():JSX.Element => {
       </Provider>
       )
 }
-
+serviceWorkerRegistration.register();
